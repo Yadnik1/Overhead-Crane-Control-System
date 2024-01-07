@@ -9,13 +9,23 @@ Additionally, the code utilizes timer interrupts to enhance control. The `HAL_TI
 
 The code not only manages data reception and relay control but also implements crucial button toggle and interlock features. Button presses, particularly those involving button 3, are monitored and toggled through the `button3_state` variable. Interlock functionality is achieved by clearing relay bits associated with buttons 5 and 6 if both buttons are pressed simultaneously. These 2 functionalities are often used in overhead cranes for numerous applications apart from normal relay actuation.
 
+### Standalone Decoder Unit
+![Standalone Decoder Unit](images/image2.png)
+
 ## Encoder Unit
 
 The encoder unit interfaces with a set of buttons representing different crane functions, such as movement and relay control. The system relies on the NRF905 wireless module for communication between the encoder unit and the crane's decoder unit. The encoder unit continuously monitors the state of these buttons and generates a 32-bit pattern based on the button configuration. This pattern is then transmitted using the NRF905 module to the decoder unit, allowing it to interpret and execute the corresponding crane operations.
 
 The encoder unit also incorporates timer interrupts, which are crucial for efficient button polling and data transmission. Timer interrupts ensure that button states are checked periodically, preventing excessive data transmission while maintaining responsiveness to button presses. Additionally, the code includes logic for switching on and off specific crane functions based on the received data, enabling the operator to control various aspects of the crane's operation remotely. Overall, the encoder unit plays a vital role in facilitating remote crane control, ensuring safety and precision in crane operations, and enhancing the efficiency of overhead crane systems.
 
+### Standalone Encoder Unit
+![Standalone Encoder Unit](images/image1.png)
+
+### Encoder-Decoder Unit Set
+![Encoder-Decoder Unit Set](images/image7.png)
+
 Additionally, I also worked towards the development of the two-sided encoder unit PCB as seen below: 
+
 ### PCB of the Encoder Unit
 ![PCB of the Encoder Unit](images/image5.png)
 
