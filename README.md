@@ -15,7 +15,7 @@ The encoder unit interfaces with a set of buttons representing different crane f
 
 The encoder unit also incorporates timer interrupts, which are crucial for efficient button polling and data transmission. Timer interrupts ensure that button states are checked periodically, preventing excessive data transmission while maintaining responsiveness to button presses. Additionally, the code includes logic for switching on and off specific crane functions based on the received data, enabling the operator to control various aspects of the crane's operation remotely. Overall, the encoder unit plays a vital role in facilitating remote crane control, ensuring safety and precision in crane operations, and enhancing the efficiency of overhead crane systems.
 
-Additionally, I also worked towards the development of the PCB of the encoder unit as seen below:
+Additionally, I also worked towards the development of the PCB of the encoder unit as seen below: ![PCB of the Encoder Unit](Overhead-Crane-Control-System/images/image5.jpg)
 
 ## EEPROM Configuration
 
