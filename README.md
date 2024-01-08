@@ -9,6 +9,8 @@ Additionally, the code utilizes timer interrupts to enhance control. The `HAL_TI
 
 The code not only manages data reception and relay control but also implements crucial button toggle and interlock features. Button presses, particularly those involving button 3, are monitored and toggled through the `button3_state` variable. Interlock functionality is achieved by clearing relay bits associated with buttons 5 and 6 if both buttons are pressed simultaneously. These 2 functionalities are often used in overhead cranes for numerous applications apart from normal relay actuation.
 
+The decoder firmware can be found in the Firmware folder in Decoder.c file.
+
 ### Standalone Decoder Unit
 ![Standalone Decoder Unit](images/image2.png)
 
@@ -17,6 +19,8 @@ The code not only manages data reception and relay control but also implements c
 The encoder unit interfaces with a set of buttons representing different crane functions, such as movement and relay control. The system relies on the NRF905 wireless module for communication between the encoder unit and the crane's decoder unit. The encoder unit continuously monitors the state of these buttons and generates a 32-bit pattern based on the button configuration. This pattern is then transmitted using the NRF905 module to the decoder unit, allowing it to interpret and execute the corresponding crane operations.
 
 The encoder unit also incorporates timer interrupts, which are crucial for efficient button polling and data transmission. Timer interrupts ensure that button states are checked periodically, preventing excessive data transmission while maintaining responsiveness to button presses. Additionally, the code includes logic for switching on and off specific crane functions based on the received data, enabling the operator to control various aspects of the crane's operation remotely. Overall, the encoder unit plays a vital role in facilitating remote crane control, ensuring safety and precision in crane operations, and enhancing the efficiency of overhead crane systems.
+
+The encoder firmware can be found in the Firmware folder in Encoder.c file.
 
 ### Standalone Encoder Unit
 ![Standalone Encoder Unit](images/image1.png)
@@ -38,6 +42,8 @@ Additionally, I also worked towards the development of the two-sided encoder uni
 The provided code serves as a critical component for configuring the decoder unit, facilitating the mapping of each key on the encoder to its respective relay on the decoder. This functionality is essential in scenarios where customization and flexibility are paramount, such as when an original equipment manufacturer (OEM) needs to provide a system that can adapt to the unique button-to-relay configurations of multiple clients. The code enables the OEM to initialize and manage memory structures that store the configuration data for different keys and sectors within the decoder. It supports both default settings and runtime customization of these configurations through AT commands received via UART.
 
 The code's working involves several key aspects. First, it initializes the memory with default values for each key and sector, ensuring a consistent starting point. Second, it processes AT commands sent over UART to customize the configuration, allowing the OEM or clients to modify the relay assignments for specific keys dynamically. Third, it employs Flash memory to store these configurations persistently, ensuring that the settings are retained even after power cycles. Lastly, it provides feedback to the user or clients through debug messages sent over UART, facilitating troubleshooting and verification of the configurations. This code serves as a robust and adaptable solution for managing button-to-relay mappings in a versatile and client-specific manner, making it highly valuable for the OEM's system customization needs.
+
+The EEPROM configuration firmware can be found in the Firmware folder in EEPROM.c file.
 
 ### Testing and Configuring the Decoder Unit
 ![Testing and Configuting the Decoder Unit](images/image3.png)
