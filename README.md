@@ -36,3 +36,9 @@ The provided code serves as a critical component for configuring the decoder uni
 
 The code's working involves several key aspects. First, it initializes the memory with default values for each key and sector, ensuring a consistent starting point. Second, it processes AT commands sent over UART to customize the configuration, allowing the OEM or clients to modify the relay assignments for specific keys dynamically. Third, it employs Flash memory to store these configurations persistently, ensuring that the settings are retained even after power cycles. Lastly, it provides feedback to the user or clients through debug messages sent over UART, facilitating troubleshooting and verification of the configurations. This code serves as a robust and adaptable solution for managing button-to-relay mappings in a versatile and client-specific manner, making it highly valuable for the OEM's system customization needs.
 
+## Final Application:
+
+The final appliation can be as seen from the image below, where the power circuitry and the enclosure is applied on the encoder and decoder units before sending it to the end client.
+
+### Final Crane System
+![Final Crane System](images/image9.jpeg)
